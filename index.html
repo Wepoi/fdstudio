@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FD Studios - Gaming Excellence</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Resetting default margins and paddings */
         * {
@@ -13,14 +12,12 @@
             box-sizing: border-box;
         }
 
-        /* General styling */
+        /* Basic styling */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f0f0f;
-            color: #fff;
+            font-family: Arial, sans-serif;
+            background-color: #000;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrollbars */
         }
 
         .container {
@@ -30,9 +27,13 @@
         }
 
         header {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
             padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s;
         }
 
         header .container {
@@ -42,15 +43,16 @@
         }
 
         header h1 {
-            font-size: 28px;
+            font-size: 24px;
+            transition: color 0.3s;
         }
 
         nav ul {
             list-style-type: none;
+            display: flex;
         }
 
         nav ul li {
-            display: inline;
             margin-right: 20px;
         }
 
@@ -70,12 +72,26 @@
             background-size: cover;
             color: #fff;
             text-align: center;
-            padding: 150px 0;
+            padding: 300px 0;
+            position: relative; /* Required for absolute positioning */
+            overflow: hidden; /* Prevent text from overflowing */
         }
 
         #hero h2 {
             font-size: 48px;
             margin-bottom: 20px;
+            animation: slideInUp 1s ease-out; /* Animate using slideInUp animation */
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .btn {
@@ -93,60 +109,110 @@
             background-color: #ffcc00;
         }
 
-        #games {
-            padding: 80px 0;
+        /* Parallax effect */
+        #hero::before {
+            content: "";
+            background-image: url('hero.jpg');
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+            animation: parallax 15s infinite alternate;
         }
 
-        .game {
+        @keyframes parallax {
+            from {
+                transform: translateX(-50px) translateY(-50px);
+            }
+            to {
+                transform: translateX(50px) translateY(50px);
+            }
+        }
+
+        /* Navigation animation */
+        header.nav-scrolled {
+            background-color: #000;
+        }
+
+        header.nav-scrolled h1 {
+            color: #ffd700;
+        }
+
+        header.nav-scrolled nav ul li a {
+            color: #fff;
+        }
+        
+        /* Game section */
+        #games {
+            padding: 80px 0;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+        #games h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #ffd700;
+        }
+
+        #games .game {
             margin-bottom: 60px;
         }
 
-        .game img {
+        #games .game img {
             max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
         }
 
-        .game img:hover {
+        #games .game img:hover {
             transform: scale(1.1);
         }
 
-        .game h3 {
-            font-size: 36px;
+        #games .game h3 {
+            font-size: 28px;
             margin: 20px 0;
         }
 
-        .game p {
-            font-size: 20px;
+        #games .game p {
+            font-size: 18px;
             color: #ccc;
             margin-bottom: 20px;
         }
 
-        footer {
+        /* Starlight - Outerworlds section */
+        #starlight {
             background-color: #222;
-            color: #ccc;
+            padding: 100px 0;
             text-align: center;
-            padding: 60px 0;
         }
 
-        footer p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        footer nav ul li a {
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        footer nav ul li a:hover {
+        #starlight h2 {
+            font-size: 36px;
             color: #ffd700;
+            margin-bottom: 40px;
+        }
+
+        #starlight .coming-soon {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        #starlight .release-date {
+            font-size: 18px;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="container">
             <h1>FD Studios</h1>
             <nav>
@@ -162,9 +228,9 @@
 
     <section id="hero">
         <div class="container">
-            <h2>Experience Gaming Excellence</h2>
-            <p>Immerse yourself in breathtaking adventures</p>
-            <a href="#games" class="btn">Discover Our Games</a>
+            <h2>Welcome to FD Studios</h2>
+            <p>Experience gaming excellence with our latest releases</p>
+            <a href="#games" class="btn">View Our Games</a>
         </div>
     </section>
 
@@ -172,24 +238,11 @@
         <div class="container">
             <h2>Featured Games</h2>
             <div class="game">
-                <img src="images.jpeg" alt="Starlight - Outerworlds">
+                <img src="starlight.jpg" alt="Starlight - Outerworlds">
                 <h3>Starlight - Outerworlds</h3>
                 <p>Embark on an epic journey through the cosmos in this 3rd person space shooter. Explore different planets and galaxies, engage in thrilling battles, and experience the ultimate gaming adventure.</p>
-                <a href="starlight.html" class="btn">Learn More</a>
+                <p class="coming-soon">Coming Soon</p>
+                <p class="release-date">Release Date: May 2024</p>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 FD Studios. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Use</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-</body>
-</html>
+    </section
