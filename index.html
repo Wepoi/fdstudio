@@ -13,11 +13,14 @@
             box-sizing: border-box;
         }
 
-        /* Basic styling */
+        /* General styling */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -39,7 +42,7 @@
         }
 
         header h1 {
-            font-size: 24px;
+            font-size: 28px;
         }
 
         nav ul {
@@ -54,6 +57,8 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
@@ -65,11 +70,11 @@
             background-size: cover;
             color: #fff;
             text-align: center;
-            padding: 100px 0;
+            padding: 150px 0;
         }
 
         #hero h2 {
-            font-size: 36px;
+            font-size: 48px;
             margin-bottom: 20px;
         }
 
@@ -77,8 +82,9 @@
             display: inline-block;
             background-color: #ffd700;
             color: #333;
-            padding: 10px 20px;
+            padding: 15px 30px;
             text-decoration: none;
+            font-size: 20px;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
@@ -88,46 +94,50 @@
         }
 
         #games {
-            padding: 50px 0;
+            padding: 80px 0;
         }
 
         .game {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .game img {
             max-width: 100%;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .game img:hover {
+            transform: scale(1.1);
         }
 
         .game h3 {
-            font-size: 24px;
+            font-size: 36px;
             margin: 20px 0;
         }
 
         .game p {
-            color: #666;
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 20px;
         }
 
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #222;
+            color: #ccc;
             text-align: center;
-            padding: 20px 0;
+            padding: 60px 0;
         }
 
-        footer nav ul {
-            margin-top: 10px;
-        }
-
-        footer nav ul li {
-            display: inline;
-            margin-right: 10px;
+        footer p {
+            font-size: 18px;
+            margin-bottom: 30px;
         }
 
         footer nav ul li a {
-            color: #fff;
-            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
         }
 
         footer nav ul li a:hover {
@@ -138,7 +148,7 @@
 <body>
     <header>
         <div class="container">
-            <h1><a href="index.html">FD Studios</a></h1>
+            <h1>FD Studios</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -152,9 +162,9 @@
 
     <section id="hero">
         <div class="container">
-            <h2>Welcome to FD Studios</h2>
-            <p>Experience gaming excellence with our latest releases.</p>
-            <a href="#games" class="btn">View Our Games</a>
+            <h2>Experience Gaming Excellence</h2>
+            <p>Immerse yourself in breathtaking adventures</p>
+            <a href="#games" class="btn">Discover Our Games</a>
         </div>
     </section>
 
@@ -164,10 +174,9 @@
             <div class="game">
                 <img src="starlight.jpg" alt="Starlight - Outerworlds">
                 <h3>Starlight - Outerworlds</h3>
-                <p>Starlight will be a 3rd person space shooter, you will be able to travel to different planets and galaxies. We offer a wide variety of features and functions we might also add a multiplayer system.</p>
+                <p>Embark on an epic journey through the cosmos in this 3rd person space shooter. Explore different planets and galaxies, engage in thrilling battles, and experience the ultimate gaming adventure.</p>
                 <a href="starlight.html" class="btn">Learn More</a>
             </div>
-            <!-- Add more game entries as needed -->
         </div>
     </section>
 
