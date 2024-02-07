@@ -106,6 +106,37 @@
             color: #fff;
         }
         
+        /* Hero section animation */
+        #hero {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            padding: 150px 0;
+        }
+
+        #hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: slideInUp 1s ease-out; /* Animate using slideInUp animation */
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            animation: slideInUp 1s ease-out 0.5s; /* Animate with delay */
+        }
+
         /* Game section */
         #games {
             padding: 80px 0;
@@ -198,7 +229,7 @@
         <div class="container">
             <h2>Featured Games</h2>
             <div class="game">
-                <img src="starlight.jpg" alt="Starlight - Outerworlds">
+                <img src="images.jpeg" alt="Starlight - Outerworlds">
                 <h3>Starlight - Outerworlds</h3>
                 <p>Embark on an epic journey through the cosmos in this 3rd person space shooter. Explore different planets and galaxies, engage in thrilling battles, and experience the ultimate gaming adventure.</p>
                 <p class="coming-soon">Coming Soon</p>
