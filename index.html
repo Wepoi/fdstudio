@@ -30,21 +30,16 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
             padding: 20px 0;
+            text-align: center;
             position: fixed;
             width: 100%;
             z-index: 1000;
             transition: background-color 0.3s;
         }
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         header h1 {
             font-size: 24px;
-            margin-left: 20px;
+            margin: 0 auto;
         }
 
         #logo {
@@ -56,6 +51,7 @@
         nav ul {
             list-style-type: none;
             display: flex;
+            justify-content: center;
         }
 
         nav ul li {
@@ -200,6 +196,22 @@
             font-size: 18px;
             color: #ccc;
         }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffcc00;
+        }
     </style>
 </head>
 <body>
@@ -208,34 +220,5 @@
             <h1>FD Studios</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="games.html">Games</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="games.html" class="btn">View Our Games</a></li>
                 </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="hero">
-        <div class="container">
-            <h2>Welcome to FD Studios</h2>
-            <p>Experience gaming excellence with our latest releases</p>
-            <a href="#games" class="btn">View Our Games</a>
-        </div>
-    </section>
-
-    <section id="games">
-        <div class="container">
-            <h2>Featured Games</h2>
-            <div class="game">
-                <img src="images.jpeg" alt="Starlight - Outerworlds">
-                <h3>Starlight - Outerworlds</h3>
-                <p>Embark on an epic journey through the cosmos in this 3rd person space shooter. Explore different planets and galaxies, engage in thrilling battles, and experience the ultimate gaming adventure.</p>
-                <p class="coming-soon">Coming Soon</p>
-                <p class="release-date">Release Date: May 2024</p>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
