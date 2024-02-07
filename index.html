@@ -1,23 +1,26 @@
-<!DOCTYPE html>
+, and experience<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FD Studios - Gaming Excellence</title>
+    <title>FD Studios</title>
     <style>
-        /* Resetting default margins and paddings */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scrollbars */
+            background-color: #1b1b1b;
+            color: #fff;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px 0;
         }
 
         .container {
@@ -26,200 +29,180 @@
             padding: 0 20px;
         }
 
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: background-color 0.3s;
+        header .logo {
+            display: flex;
+            align-items: center;
+            margin-left: -20px;
         }
 
-        header h1 {
-            font-size: 24px;
-        }
-
-        #logo {
-            width: 40px;
-            height: auto;
+        header .logo img {
+            width: 50px;
             margin-right: 10px;
         }
 
-        nav ul {
-            list-style-type: none;
+        header nav {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
         }
 
-        nav ul li {
-            margin-right: 20px;
+        header nav ul {
+            list-style: none;
+            display: flex;
         }
 
-        nav ul li a {
-            color: #fff;
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
             text-decoration: none;
+            color: #fff;
             font-size: 18px;
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
+        header nav ul li a:hover {
             color: #ffd700;
         }
 
-        /* Parallax effect */
-        #hero::before {
-            content: "";
+        .hero {
             background-image: url('hero.jpg');
             background-size: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.6;
-            animation: parallax 15s infinite alternate;
-        }
-
-        @keyframes parallax {
-            from {
-                transform: translateX(-50px) translateY(-50px);
-            }
-            to {
-                transform: translateX(50px) translateY(50px);
-            }
-        }
-
-        /* Navigation animation */
-        header.nav-scrolled {
-            background-color: #000;
-        }
-
-        header.nav-scrolled nav ul li a {
-            color: #fff;
-        }
-        
-        /* Hero section animation */
-        #hero {
-            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             color: #fff;
-            padding: 150px 0;
         }
 
-        #hero h2 {
-            font-size: 48px;
+        .hero h1 {
+            font-size: 64px;
             margin-bottom: 20px;
-            animation: slideInUp 1s ease-out; /* Animate using slideInUp animation */
         }
 
-        @keyframes slideInUp {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        #hero p {
+        .hero p {
             font-size: 24px;
-            margin-bottom: 20px;
-            animation: slideInUp 1s ease-out 0.5s; /* Animate with delay */
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Game section */
-        #games {
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffcc00;
+        }
+
+        .features {
             padding: 80px 0;
-            background-color: #111;
-            color: #fff;
             text-align: center;
         }
 
-        #games h2 {
-            font-size: 36px;
+        .feature {
             margin-bottom: 40px;
-            color: #ffd700;
         }
 
-        #games .game {
-            margin-bottom: 60px;
-        }
-
-        #games .game img {
-            max-width: 100%;
+        .feature img {
+            width: 100%;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
         }
 
-        #games .game img:hover {
+        .feature img:hover {
             transform: scale(1.1);
         }
 
-        #games .game h3 {
-            font-size: 28px;
+        .feature h2 {
+            font-size: 36px;
             margin: 20px 0;
         }
 
-        #games .game p {
+        .feature p {
             font-size: 18px;
             color: #ccc;
             margin-bottom: 20px;
         }
 
-        /* Starlight - Outerworlds section */
-        #starlight {
-            background-color: #222;
-            padding: 100px 0;
+        .footer {
+            background-color: #111;
+            padding: 40px 0;
             text-align: center;
         }
 
-        #starlight h2 {
-            font-size: 36px;
-            color: #ffd700;
-            margin-bottom: 40px;
-        }
-
-        #starlight .coming-soon {
-            font-size: 24px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        #starlight .release-date {
+        .footer p {
             font-size: 18px;
-            color: #ccc;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <header id="header">
+    <header>
         <div class="container">
-            <h1>FD Studios</h1>
+            <div class="logo">
+                <img src="logo.png" alt="FD Studios">
+                <h1>FD Studios</h1>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="games.html" class="btn"></a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero">
+    <section class="hero">
         <div class="container">
-            <h2>Welcome to FD Studios</h2>
+            <h1>Welcome to FD Studios</h1>
             <p>Experience gaming excellence with our latest releases</p>
+            <a href="#games" class="btn">View Our Games</a>
         </div>
     </section>
 
-    <section id="games">
+    <section class="features" id="features">
         <div class="container">
-            <h2>Featured Games</h2>
-            <div class="game">
-                <img src="starlight.jpg" alt="Starlight - Outerworlds">
-                <h3>Starlight - Outerworlds</h3>
-                <p>Embark on an epic journey through the cosmos in this 3rd person space shooter. Explore different planets and galaxies, engage in thrilling battles, and experience
+            <h2>Our Features</h2>
+            <div class="feature">
+                <img src="feature1.jpg" alt="Feature 1">
+                <h2>Feature 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat risus eu mi dictum, non finibus eros congue.</p>
+            </div>
+            <div class="feature">
+                <img src="feature2.jpg" alt="Feature 2">
+                <h2>Feature 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat risus eu mi dictum, non finibus eros congue.</p>
+            </div>
+            <div class="feature">
+                <img src="feature3.jpg" alt="Feature 3">
+                <h2>Feature 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat risus eu mi dictum, non finibus eros congue.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="container">
+            <p>&copy; 2024 FD Studios. 
