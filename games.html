@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - FD Studios</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b1b1b;
+            color: #fff;
+            position: relative; /* Position relative for absolute positioning inside */
+        }
+
+        .header-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .header-box h1 {
+            font-size: 24px;
+            color: #ffd700; /* Yellow text */
+        }
+
+        .lines {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            right: 10px; /* Adjust right position as needed */
+        }
+
+        .line {
+            width: 20px;
+            height: 2px;
+            background-color: #ffd700; /* Yellow lines */
+            margin-bottom: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 20px; /* Add top padding to prevent content from being hidden behind the header box */
+        }
+
+        .game {
+            background-image: url('game_bg.jpg');
+            background-size: cover;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .game h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .game p {
+            font-size: 18px;
+            color: #fff; /* Ensure text is readable on top of image */
+        }
+    </style>
+</head>
+<body>
+    <div class="header-box">
+        <h1>FD Studios</h1>
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="game">
+            <h2>Starlight Outerworlds</h2>
+            <p><em>Coming Soon</em></p>
+            <p>Experience an epic 3rd person shooter set in the vast cosmos. Explore distant planets, engage in intense battles, and uncover the mysteries of the universe in Starlight Outerworlds.</p>
+        </div>
+        
+        <div class="game">
+            <h2>Galactic Quest</h2>
+            <p><em>Now Available</em></p>
+            <p>Embark on an interstellar journey in Galactic Quest. Navigate through asteroid fields, battle hostile alien species, and conquer the galaxy to become the ultimate space explorer.</p>
+        </div>
+        
+        <div class="game">
+            <h2>Cosmic Conqueror</h2>
+            <p><em>Coming Soon</em></p>
+            <p>Command your own fleet of starships in Cosmic Conqueror. Dominate rival factions, expand your empire, and reign supreme over the vast expanse of the cosmos.</p>
+        </div>
+        
+        <div class="game">
+            <h2>Nebula Odyssey</h2>
+            <p><em>Now Available</em></p>
+            <p>Embark on an epic odyssey through the Nebula galaxy. Traverse breathtaking landscapes, encounter ancient civilizations, and unravel the secrets of the cosmos in Nebula Odyssey.</p>
+        </div>
+        
+        <div class="game">
+            <h2>Interstellar Alliance</h2>
+            <p><em>Coming Soon</em></p>
+            <p>Forge alliances, wage wars, and shape the fate of the universe in Interstellar Alliance. Lead your civilization to glory or downfall in this expansive space strategy game.</p>
+        </div>
+    </div>
+</body>
+</html>
