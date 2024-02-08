@@ -31,56 +31,114 @@
 
         .header-box h1 {
             font-size: 24px;
-            color: #ffd700; /* Yellow text */
+            color: #fff; /* White text */
+            font-weight: bold; /* Bold text */
+            transition: transform 0.3s, opacity 0.3s;
         }
 
         .lines {
             position: absolute;
             top: 10px; /* Adjust top position as needed */
             right: 10px; /* Adjust right position as needed */
+            cursor: pointer;
         }
 
         .line {
             width: 20px;
-            height: 2px;
-            background-color: #ffd700; /* Yellow lines */
+            height: 4px; /* Increased thickness */
+            background-color: #fff; /* White lines */
             margin-bottom: 5px;
+            transition: transform 0.3s, width 0.3s; /* Added width transition */
+        }
+
+        .line:hover {
+            transform: scale(1.2);
+        }
+
+        .line:nth-child(2) {
+            transition-delay: 0.1s; /* Delay the animation for the second line */
+        }
+
+        .line:nth-child(3) {
+            transition-delay: 0.2s; /* Delay the animation for the third line */
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffd700;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            z-index: 2; /* Ensure it's above the lines */
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .home-button.show {
+            display: inline-block; /* Show when active */
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 100px 20px 20px; /* Add top padding to prevent content from being hidden behind the header box */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
 
         .game {
-            background-image: url('game_bg.jpg');
-            background-size: cover;
+            background-color: #333;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            width: calc(33.33% - 20px);
+            min-width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .game:hover {
+            transform: translateY(-10px);
         }
 
         .game h2 {
             font-size: 24px;
             margin-bottom: 10px;
+            color: #ffd700;
         }
 
         .game p {
             font-size: 18px;
-            color: #fff; /* Ensure text is readable on top of image */
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            .game {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .game {
+                width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
 <body>
     <div class="header-box">
         <h1>FD Studios</h1>
-        <div class="lines">
+        <div class="lines" onclick="toggleHome()">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </div>
+        <div class="home-button" onclick="toggleHome()">Home</div>
     </div>
 
     <div class="container">
@@ -113,6 +171,27 @@
             <p><em>Coming Soon</em></p>
             <p>Forge alliances, wage wars, and shape the fate of the universe in Interstellar Alliance. Lead your civilization to glory or downfall in this expansive space strategy game.</p>
         </div>
+
+        <!-- Add more games here -->
     </div>
+
+    <script>
+        function toggleHome() {
+            var homeButton = document.querySelector('.home-button');
+            var headerText = document.querySelector('.header-box h1');
+
+            if (homeButton.classList.contains('show')) {
+                // Slide out animation
+                headerText.style.transform = 'translateY(0)';
+                headerText.style.opacity = '1';
+                homeButton.classList.remove('show');
+            } else {
+                // Slide in animation
+                headerText.style.transform = 'translateY(-100%)';
+                headerText.style.opacity = '0';
+                homeButton.classList.add('show');
+            }
+        }
+    </script>
 </body>
-</html>
+</
