@@ -16,7 +16,9 @@
             font-family: Arial, sans-serif;
             background-color: #1b1b1b;
             color: #fff;
-            position: relative; /* Position relative for absolute positioning inside */
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
         }
 
         .header-box {
@@ -24,71 +26,56 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            background-color: rgba(0, 0, 0, 0.8);
             text-align: center;
             padding: 20px 0;
+            z-index: 999;
         }
 
         .header-box h1 {
             font-size: 24px;
-            color: #fff; /* White text */
-            font-weight: bold; /* Bold text */
+            color: #fff;
+            font-weight: bold;
             transition: transform 0.3s, opacity 0.3s;
-        }
-
-        .lines {
-            position: absolute;
-            top: 10px; /* Adjust top position as needed */
-            right: 10px; /* Adjust right position as needed */
             cursor: pointer;
+            text-decoration: none !important;
         }
 
-        .line {
+        .back-btn {
+            position: fixed;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%) rotate(180deg);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 999;
+        }
+
+        .back-btn:hover {
+            background-color: #222;
+        }
+
+        .back-btn svg {
             width: 20px;
-            height: 4px; /* Increased thickness */
-            background-color: #fff; /* White lines */
-            margin-bottom: 5px;
-            transition: transform 0.3s, width 0.3s; /* Added width transition */
-        }
-
-        .line:hover {
-            transform: scale(1.2);
-        }
-
-        .line:nth-child(2) {
-            transition-delay: 0.1s; /* Delay the animation for the second line */
-        }
-
-        .line:nth-child(3) {
-            transition-delay: 0.2s; /* Delay the animation for the third line */
-        }
-
-        .home-button {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ffd700;
-            color: #000;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none; /* Initially hidden */
-            z-index: 2; /* Ensure it's above the lines */
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .home-button.show {
-            display: inline-block; /* Show when active */
+            fill: #fff;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 100px 20px 20px; /* Add top padding to prevent content from being hidden behind the header box */
+            padding: 100px 20px 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            position: relative;
+            z-index: 1;
         }
 
         .game {
@@ -128,17 +115,47 @@
                 width: calc(100% - 20px);
             }
         }
+
+        .footer {
+            background-color: #111;
+            padding: 40px 0;
+            text-align: center;
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .footer p {
+            font-size: 18px;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
+    <div class="back-btn" onclick="window.location.href='index.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M10 17l-5-5 5-5v10z"/>
+        </svg>
+    </div>
+
     <div class="header-box">
-        <h1>FD Studios</h1>
-        <div class="lines" onclick="toggleHome()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <div class="home-button" onclick="toggleHome()">Home</div>
+        <a href="index.html">
+            <h1>FD Studios</h1>
+        </a>
     </div>
 
     <div class="container">
@@ -153,45 +170,12 @@
             <p><em>Now Available</em></p>
             <p>Embark on an interstellar journey in Galactic Quest. Navigate through asteroid fields, battle hostile alien species, and conquer the galaxy to become the ultimate space explorer.</p>
         </div>
-        
-        <div class="game">
-            <h2>Cosmic Conqueror</h2>
-            <p><em>Coming Soon</em></p>
-            <p>Command your own fleet of starships in Cosmic Conqueror. Dominate rival factions, expand your empire, and reign supreme over the vast expanse of the cosmos.</p>
-        </div>
-        
-        <div class="game">
-            <h2>Nebula Odyssey</h2>
-            <p><em>Now Available</em></p>
-            <p>Embark on an epic odyssey through the Nebula galaxy. Traverse breathtaking landscapes, encounter ancient civilizations, and unravel the secrets of the cosmos in Nebula Odyssey.</p>
-        </div>
-        
-        <div class="game">
-            <h2>Interstellar Alliance</h2>
-            <p><em>Coming Soon</em></p>
-            <p>Forge alliances, wage wars, and shape the fate of the universe in Interstellar Alliance. Lead your civilization to glory or downfall in this expansive space strategy game.</p>
-        </div>
 
         <!-- Add more games here -->
     </div>
 
-    <script>
-        function toggleHome() {
-            var homeButton = document.querySelector('.home-button');
-            var headerText = document.querySelector('.header-box h1');
-
-            if (homeButton.classList.contains('show')) {
-                // Slide out animation
-                headerText.style.transform = 'translateY(0)';
-                headerText.style.opacity = '1';
-                homeButton.classList.remove('show');
-            } else {
-                // Slide in animation
-                headerText.style.transform = 'translateY(-100%)';
-                headerText.style.opacity = '0';
-                homeButton.classList.add('show');
-            }
-        }
-    </script>
+    <div class="footer">
+        <p>&copy; 2024 FD Studios. All Rights Reserved. <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </div>
 </body>
-</
+    </html>
