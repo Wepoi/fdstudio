@@ -22,7 +22,7 @@
         }
 
         .header-box {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -34,38 +34,11 @@
 
         .header-box h1 {
             font-size: 48px;
-            color: #fff;
             font-weight: bold;
+            color: #ffd700; /* Match color from star */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding text shadow */
             transition: transform 0.3s, opacity 0.3s;
             cursor: pointer;
-            text-decoration: none !important;
-        }
-
-        .back-btn {
-            position: fixed;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%) rotate(180deg);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            z-index: 999;
-        }
-
-        .back-btn:hover {
-            background-color: #222;
-        }
-
-        .back-btn svg {
-            width: 20px;
-            fill: #fff;
         }
 
         .container {
@@ -119,17 +92,8 @@
     </style>
 </head>
 <body>
-    <div class="back-btn" onclick="window.location.href='index.html'">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M10 17l-5-5 5-5v10z"/>
-        </svg>
-    </div>
-
     <div class="header-box">
-        <a href="index.html">
-            <h1 style="font-family: 'Arial Black', sans-serif; color: #ffd700;">FD Studios</h1>
-        </a>
+        <h1>FD Studios</h1>
     </div>
 
     <div class="container">
