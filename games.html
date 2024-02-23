@@ -51,21 +51,11 @@
         }
 
         .game {
-            background-color: #333;
+            background-size: cover;
+            background-position: center;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            width: calc(33.33% - 20px);
-            min-width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            animation: glow 2s infinite alternate; /* Adding glow animation */
-        }
-
-        .game:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); /* Change box shadow on hover */
-            background-color: #444; /* Change background color on hover */
         }
 
         .game h2 {
@@ -78,15 +68,6 @@
         .game p {
             font-size: 18px;
             color: #fff;
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-            }
-            100% {
-                box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
-            }
         }
 
         @media screen and (max-width: 768px) {
@@ -108,13 +89,13 @@
     </div>
 
     <div class="container">
-        <div class="game">
+        <div class="game" style="background-image: url('game1.png');">
             <h2>Starlight Outerworlds</h2>
             <p><em>Coming Soon</em></p>
             <p>Experience an epic 3rd person shooter set in the vast cosmos. Explore distant planets, engage in intense battles, and uncover the mysteries of the universe in Starlight Outerworlds.</p>
         </div>
         
-        <div class="game">
+        <div class="game" style="background-image: url('game2.png');">
             <h2>Galactic Quest</h2>
             <p><em>Coming Soon</em></p>
             <p>Embark on an interstellar journey in Galactic Quest. Navigate through asteroid fields, battle hostile alien species, and conquer the galaxy to become the ultimate space explorer.</p>
