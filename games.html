@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FD Studios</title>
+    <title>Games - FD Studios</title>
     <style>
         /* Reset */
         * {
@@ -16,155 +16,102 @@
             font-family: Arial, sans-serif;
             background-color: #1b1b1b;
             color: #fff;
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
         }
 
-        header {
-            background-color: #111;
-            padding: 20px 0;
+        .header-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 5px 0; /* Adjusted padding to make the shadow box smaller */
+            z-index: 999;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header-box h1 {
+            color: #fff; /* Set text color to white */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding text shadow */
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header .logo {
+            margin: 80px auto 20px; /* Adjusted margin */
+            padding: 20px;
             display: flex;
-            align-items: center;
-            margin-left: -20px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            position: relative;
+            z-index: 1;
         }
 
-        header .logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        header nav ul li {
-            margin-left: 20px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        header nav ul li a:hover {
-            color: #ffd700;
-        }
-
-        .hero {
-            background-image: url('hero.jpg');
-            background-size: cover;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero h1 {
-            font-size: 64px;
+        .game {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
             margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            width: calc(33.33% - 20px);
+            min-width: 300px;
+            transition: transform 0.3s ease;
         }
 
-        .hero p {
+        .game:hover {
+            transform: translateY(-10px);
+        }
+
+        .game h2 {
             font-size: 24px;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .butn {
-            display: inline-block;
-            background-color: 000;
-            color: #000;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-         }
-
-        .btn {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #000;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: 
-        }
-
-        .footer {
-            background-color: #111;
-            padding: 40px 0;
-            text-align: center;
-            color: #ccc;
-        }
-
-        .footer p {
-            font-size: 18px;
-        }
-
-        .footer a {
+            margin-bottom: 10px;
             color: #ffd700;
-            text-decoration: none;
-            transition: color 0.3s;
-            margin: 0 10px;
+            font-weight: bold; /* Make game titles bold */
         }
 
-        .footer a:hover {
+        .game p {
+            font-size: 18px;
             color: #fff;
         }
 
-        /* Centering the FD Studios heading */
-        .centered-heading {
-            text-align: center;
+        @media screen and (max-width: 768px) {
+            .game {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .game {
+                width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="centered-heading">
-                <h1>FD Studios</h1>
-            </div>
-        </div>
-    </header>
+    <div class="header-box">
+        <h1>FD Studios</h1>
+    </div>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to FD Studios</h1>
-            <p>Experience gaming excellence with our latest releases</p>
-            <a href="games.html" class="btn">View Our Games</a>
+    <div class="container">
+        <div class="game">
+            <h2>Starlight Outerworlds</h2>
+            <p><em>Coming Soon</em></p>
+            <p>Experience an epic 3rd person shooter set in the vast cosmos. Explore distant planets, engage in intense battles, and uncover the mysteries of the universe in Starlight Outerworlds.</p>
         </div>
-    </section>
+        
+        <div class="game">
+            <h2>Galactic Quest</h2>
+            <p><em>Coming Soon</em></p>
+            <p>Embark on an interstellar journey in Galactic Quest. Navigate through asteroid fields, battle hostile alien species, and conquer the galaxy to become the ultimate space explorer.</p>
+        </div>
 
-    <section class="footer">
-        <div class="container">
-            <p>&copy; 2024 FD Studios. All Rights Reserved.</p>
-            <p><a href="terms.html" class="butn">Terms of Service</a>  <a href="pp.html" class="butn">Privacy Policy</a> <a href="cp.html" class="butn">Cookie Policy</a></p>
-        </div>
-    </section>
+        <div class="game">
+           <h2>Information</h2>
+           <p></p>
+           <p>We are planning to release "Starlight - Outerworlds" on the 25th of November. We will make sure to keep you up to date on the development progress of the game.</p>
+
+    </div>
 </body>
-</html>
