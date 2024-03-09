@@ -39,19 +39,54 @@
         .btn:hover {
             background-color: #333;
         }
-        .plans {
+        .section {
             margin-top: 50px;
         }
-        .soon {
-            margin-top: 100px;
-            font-style: italic;
+        .contact {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact form input[type="text"],
+        .contact form input[type="email"],
+        .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .contact form input[type="submit"] {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact form input[type="submit"]:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1><span style="color: black;">WEB</span><span style="color: red;">CO</span></h1>
-        <div class="plans">
+        <div class="section">
+            <h2>Contact Us</h2>
+            <div class="contact">
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required><br>
+                    <input type="email" name="email" placeholder="Your Email" required><br>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div class="section">
             <a href="#" class="btn">PLANS</a>
         </div>
         <p class="soon">More exciting features coming soon...</p>
