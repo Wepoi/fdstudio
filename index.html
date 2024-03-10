@@ -11,17 +11,19 @@
             margin: 0;
             padding: 0;
             background-color: black;
-            color: #333;
+            color: white;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 50px;
-            text-align: center;
             border-radius: 50%;
             background-color: white;
             margin-top: 50px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            text-align: center;
         }
         h1 {
             font-size: 3em;
@@ -45,6 +47,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 2;
         }
         .footer p {
             margin: 0;
@@ -54,23 +57,33 @@
         .footer a {
             color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: #555;
+            transition: background-color 0.3s ease;
+        }
+        .footer a:hover {
+            background-color: #777;
         }
         .logo {
-            width: 30px;
-            height: 30px;
-            margin-right: 5px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: auto;
+            z-index: 2;
         }
     </style>
 </head>
 <body>
+    <img src="nightwire_logo.png" alt="NightWire Logo" class="logo">
     <div class="container">
         <h1><span style="color: black;">WEB</span><span style="color: red;">CO</span></h1>
         <p class="soon">Coming Soon</p>
     </div>
     <div class="footer">
-        <p>Designed by <a href="https://nightwirestudios.com" target="_blank">NightWire Studios <img src="nightwire_logo.png" alt="NightWire Logo" class="logo"></a></p>
+        <p><a href="https://nightwirestudios.com" target="_blank">NightWire Studios</a></p>
     </div>
 </body>
 </html>
