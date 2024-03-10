@@ -51,18 +51,32 @@
         <input type="text" id="username" name="username" required>
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <div style="position: relative;">
+            <input type="password" id="password" name="password" required>
+            <span style="position: absolute; top: 10px; right: 10px; cursor: pointer;" onclick="togglePassword()">
+                Show Password
+            </span>
+        </div>
 
         <input type="submit" value="Login" onclick="login()">
     </form>
 
     <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
         function login() {
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
             if (username === 'nwstd1' && password === 'adminstrationx23') {
                 alert('Login successful!');
-                // Redirect to admin page or perform other actions here
+                window.location.href = 'dashboard.html';
             } else {
                 alert('Invalid username or password. Please try again.');
             }
