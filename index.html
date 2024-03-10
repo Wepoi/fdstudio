@@ -15,7 +15,7 @@
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 50px;
             background-color: black;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -31,20 +31,6 @@
             font-size: 1.5em;
             font-style: italic;
             margin-top: 50px;
-        }
-        .footer {
-            background-color: black;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-        }
-        .footer a:hover {
-            background-color: #333;
         }
         .logo {
             position: absolute;
@@ -62,6 +48,16 @@
             height: auto;
             z-index: 2;
         }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer img {
+            width: 80%;
+            max-width: 600px;
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -70,8 +66,10 @@
         <h1><span style="color: white;">WEB</span><span style="color: red;">CO</span></h1>
         <p class="soon">Coming Soon...</p>
     </div>
-    <a href="https://nightwirestudios.com">
-        <img src="nightwire_studios_long_image.png" alt="NightWire Studios Logo" class="logo">
-    </a>
+    <div class="footer">
+        <a href="https://nightwirestudios.com">
+            <img src="nightwire_studios_long_image.png" alt="NightWire Studios Logo" class="logo">
+        </a>
+    </div>
 </body>
 </html>
