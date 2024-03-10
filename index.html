@@ -10,14 +10,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background-color: black;
             color: #333;
         }
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 50px;
             text-align: center;
+            border-radius: 50%;
+            background-color: white;
+            margin-top: 50px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
         h1 {
             font-size: 3em;
@@ -38,14 +42,25 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .footer p {
             margin: 0;
             font-size: 1.2em;
+            margin-right: 10px;
         }
         .footer a {
             color: white;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -55,7 +70,7 @@
         <p class="soon">Coming Soon</p>
     </div>
     <div class="footer">
-        <p>Designed by <a href="https://nightwirestudios.com" target="_blank">NightWire Studios</a></p>
+        <p>Designed by <a href="https://nightwirestudios.com" target="_blank">NightWire Studios <img src="nightwire_logo.png" alt="NightWire Logo" class="logo"></a></p>
     </div>
 </body>
 </html>
