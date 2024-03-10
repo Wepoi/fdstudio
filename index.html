@@ -20,6 +20,7 @@
             background-color: black;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             text-align: center;
+            position: relative;
         }
         h1 {
             font-size: 3em;
@@ -49,9 +50,28 @@
             height: auto;
             z-index: 2;
         }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
+        .admin-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .login-button {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
         }
     </style>
 </head>
@@ -60,6 +80,14 @@
     <div class="container">
         <h1><span style="color: white;">WEB</span><span style="color: red;">CO</span></h1>
         <p class="soon">Coming Soon...</p>
+        <button class="admin-button" onclick="toggleLogin()">Admin</button>
+        <a href="login.html" class="login-button" id="loginBtn">Login</a>
     </div>
+    <script>
+        function toggleLogin() {
+            var loginBtn = document.getElementById('loginBtn');
+            loginBtn.style.display = loginBtn.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
